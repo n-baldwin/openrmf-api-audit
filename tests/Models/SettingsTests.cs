@@ -9,21 +9,23 @@ namespace tests.Models
         [Fact]
         public void Test_NewSettingsIsValid()
         {
-            Settings audset = new Settings();
-            Assert.True(audset != null);
+            Settings settings = new Settings();
+            
+            // Testing
+            Assert.False(settings == null);
         }
     
         [Fact]
         public void Test_SettingsWithDataIsValid()
         {
-            Settings audset = new Settings();
-            audset.ConnectionString = "myConnection";
-            audset.Database = "user=x; database=x; password=x;";
+            Settings settings = new Settings();
 
-            // test things out
-            Assert.True(audset != null);
-            Assert.True (!string.IsNullOrEmpty(audset.ConnectionString));
-            Assert.True (!string.IsNullOrEmpty(audset.Database));
+            settings.ConnectionString = "myConnection";
+            settings.Database = "user=x; database=x; password=x;";
+
+            // Testing
+            Assert.True(settings.ConnectionString == "myConnection");
+            Assert.True(settings.Database == "user=x; database=x; password=x;");
         }
     }
 }
