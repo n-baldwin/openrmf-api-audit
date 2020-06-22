@@ -23,11 +23,13 @@ namespace tests.Data
         [Fact]
         public async Task Test_AuditRepositoryIsValid()
         {
-            // Testing
             Assert.False(_auditRepository == null);
 
+            // Testing
+            /*
             await _auditRepository.GetAllAudits();
             await _auditRepository.GetAudit("someid");
+            */
         }
     }
 }
